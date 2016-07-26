@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>42256569</uid>
+    <first_name>Машуля</first_name>
+    <last_name>Тодчук</last_name>
+    <sex>1</sex>
+    <bdate>4.8.1993</bdate>
+    <followers_count>466</followers_count>
+  </user>
+</response>

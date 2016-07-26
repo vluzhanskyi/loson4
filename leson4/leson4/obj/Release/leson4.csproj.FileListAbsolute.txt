@@ -1,0 +1,13 @@
+E:\GitFolder\leson4VK\leson4\leson4\bin\Release\leson4.exe.config
+E:\GitFolder\leson4VK\leson4\leson4\bin\Release\leson4.exe
+E:\GitFolder\leson4VK\leson4\leson4\bin\Release\leson4.pdb
+E:\GitFolder\leson4VK\leson4\leson4\bin\Release\System.Net.Http.Extensions.dll
+E:\GitFolder\leson4VK\leson4\leson4\bin\Release\System.Net.Http.Primitives.dll
+E:\GitFolder\leson4VK\leson4\leson4\bin\Release\VkAPI.dll
+E:\GitFolder\leson4VK\leson4\leson4\bin\Release\System.Net.Http.Extensions.xml
+E:\GitFolder\leson4VK\leson4\leson4\bin\Release\System.Net.Http.Primitives.xml
+E:\GitFolder\leson4VK\leson4\leson4\obj\Release\leson4.Form1.resources
+E:\GitFolder\leson4VK\leson4\leson4\obj\Release\leson4.Properties.Resources.resources
+E:\GitFolder\leson4VK\leson4\leson4\obj\Release\leson4.csproj.GenerateResource.Cache
+E:\GitFolder\leson4VK\leson4\leson4\obj\Release\leson4.exe
+E:\GitFolder\leson4VK\leson4\leson4\obj\Release\leson4.pdb

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>3764086</uid>
+    <first_name>Юра</first_name>
+    <last_name>Кондратюк</last_name>
+    <sex>2</sex>
+    <bdate>26.4.2000</bdate>
+    <followers_count>58</followers_count>
+    <hidden>1</hidden>
+  </user>
+</response>

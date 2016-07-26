@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>13387196</uid>
+    <first_name>Слава</first_name>
+    <last_name>Бобров</last_name>
+    <sex>2</sex>
+    <followers_count>25</followers_count>
+    <hidden>1</hidden>
+  </user>
+</response>

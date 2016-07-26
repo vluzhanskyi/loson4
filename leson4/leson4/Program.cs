@@ -1,16 +1,11 @@
-﻿using ApiCore;
-using MediaBrowser.Controller.Session;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using VkAPI;
 using VkAPI.Wrappers.Friends;
-using VkNet;
-using VkNet.Enums.Filters;
-using VkNet.Model.RequestParams;
+using System.IO;
+using System.Xml.Linq;
 
 namespace leson4
 {
@@ -24,63 +19,44 @@ namespace leson4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-        
+            Application.Run(new Form1());      
         }
-    }
-
-    
-
+    }   
     public class VKLogic
     {
-        //FriendsGetParams Params = new FriendsGetParams();
-        string Email { set; get; } 
-        string Password { set; get; }
-       private Dictionary<string, string> LogIn(string email, string password)
+        string Token { set; get; } 
+        string UserId { set; get; }
+
+        public void CollectLoginData(string token, string userId)
         {
-            Settings settings = Settings.All;
-            int appId = 5555068;
-            VkApi api = new VkApi();
-            string par3;
-
-           // ApiAuthParams AuthParams = new ApiAuthParams();
-            var Luzh = new Dictionary<string, string>();
-            api.Authorize(appId, email, password, settings);
-            var par = new FriendsGetParams();
-
-            par.Fields = ProfileFields.FriendLists;
-            var AccInfo = api.Friends.Get(par);
-            
-            foreach (var par1 in AccInfo)
-            {
-                var par2 = par1.FriendLists;
-                Luzh.Add(par1.Id.ToString(), par1.LastName);
-                if (par2 != null)
-                    par3 = par2.ToString();
-            }
-         
-            return Luzh;
-        }
-
-        public void CollectLoginData(string email, string password)
-        {
-            Email = email;
-            Password = password;
+            Token = token;
+            UserId = userId;
         }
 
         public void SaveData()
         {
             var users = new List<User>();
+            string response = String.Empty;
 
-            Dictionary<string, string> friends = LogIn(Email, Password);
+            XDocument doc = XDocument.Load("http://api.vk.com/method/friends.get.xml?user_id=" + UserId);
+            var result = doc.Root.Elements("uid").Select(e => e.Value).ToArray();
+            XDocument doc2 = new XDocument();
 
-            foreach (var item in friends)
+            foreach (var friend in result)
             {
-                User user = new User(item.Value, item.Key);
-                //Add groups here
-                users.Add(user);
+                
+                XDocument friends = XDocument.Load("http://api.vk.com/method/users.get.xml?user_ids=" + friend + "&fields=first_name,last_name,bdate,followers_count,sex");
+              
+                foreach(XNode node in friends.Nodes())
+                {
+                   //save to one file
+                }
+               
             }
-            
+
+            doc2.Save("Base//base.xml");
+            //var result = "https://api.vk.com/method/friends.get.xml?user_ids="+UserId+"&fields=bdate&v=5.53";
+
         }
      
         class User

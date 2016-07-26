@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>25021151</uid>
+    <first_name>Светлана</first_name>
+    <last_name>Зайчик</last_name>
+    <deactivated>deleted</deactivated>
+    <sex>1</sex>
+  </user>
+</response>

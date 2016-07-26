@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>153971353</uid>
+    <first_name>Татьяна</first_name>
+    <last_name>Ременюк</last_name>
+    <sex>1</sex>
+    <bdate>22.11</bdate>
+    <followers_count>225</followers_count>
+  </user>
+</response>

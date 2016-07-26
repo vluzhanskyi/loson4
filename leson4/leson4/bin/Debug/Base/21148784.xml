@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>21148784</uid>
+    <first_name>Лилия</first_name>
+    <last_name>Василюк</last_name>
+    <sex>1</sex>
+    <bdate>4.11.1986</bdate>
+    <followers_count>168</followers_count>
+    <hidden>1</hidden>
+  </user>
+</response>

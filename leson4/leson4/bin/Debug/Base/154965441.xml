@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>154965441</uid>
+    <first_name>Инна</first_name>
+    <last_name>Кузьменко</last_name>
+    <sex>1</sex>
+    <bdate>17.8</bdate>
+    <followers_count>38</followers_count>
+  </user>
+</response>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>71338353</uid>
+    <first_name>Алексей</first_name>
+    <last_name>Павловский</last_name>
+    <sex>2</sex>
+    <bdate>30.3.1987</bdate>
+    <followers_count>21</followers_count>
+  </user>
+</response>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>7571704</uid>
+    <first_name>Іринка</first_name>
+    <last_name>Новицька</last_name>
+    <sex>1</sex>
+    <bdate>1.1.1990</bdate>
+    <followers_count>341</followers_count>
+  </user>
+</response>

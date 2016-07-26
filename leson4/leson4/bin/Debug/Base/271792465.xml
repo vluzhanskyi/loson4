@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>271792465</uid>
+    <first_name>Денис</first_name>
+    <last_name>Білоус</last_name>
+    <sex>2</sex>
+    <bdate>4.2.1999</bdate>
+    <followers_count>25</followers_count>
+  </user>
+</response>

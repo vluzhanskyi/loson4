@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>56781466</uid>
+    <first_name>Оксана</first_name>
+    <last_name>Дрижук</last_name>
+    <sex>1</sex>
+    <bdate>30.8</bdate>
+    <followers_count>68</followers_count>
+  </user>
+</response>

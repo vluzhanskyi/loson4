@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>25125254</uid>
+    <first_name>Марина</first_name>
+    <last_name>Кушкевич</last_name>
+    <sex>1</sex>
+    <bdate>10.6.1991</bdate>
+    <followers_count>166</followers_count>
+  </user>
+</response>

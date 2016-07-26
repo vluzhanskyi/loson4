@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>67791058</uid>
+    <first_name>Тетяна</first_name>
+    <last_name>Мирна</last_name>
+    <sex>1</sex>
+    <bdate>26.1.1990</bdate>
+    <followers_count>179</followers_count>
+    <hidden>1</hidden>
+  </user>
+</response>

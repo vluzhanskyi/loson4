@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>7292571</uid>
+    <first_name>Паша</first_name>
+    <last_name>Поджарый</last_name>
+    <sex>2</sex>
+    <bdate>24.11.1985</bdate>
+    <followers_count>28</followers_count>
+    <hidden>1</hidden>
+  </user>
+</response>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>352376</uid>
+    <first_name>Нелли</first_name>
+    <last_name>Богданова</last_name>
+    <sex>1</sex>
+    <bdate>25.11.1988</bdate>
+    <followers_count>423</followers_count>
+  </user>
+</response>

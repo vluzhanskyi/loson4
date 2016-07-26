@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>287726770</uid>
+    <first_name>Татьяна</first_name>
+    <last_name>Тучак</last_name>
+    <sex>1</sex>
+    <bdate>20.10.1990</bdate>
+    <followers_count>17</followers_count>
+  </user>
+</response>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>34085285</uid>
+    <first_name>Вячеслав</first_name>
+    <last_name>Козачук</last_name>
+    <sex>2</sex>
+    <followers_count>20</followers_count>
+    <hidden>1</hidden>
+  </user>
+</response>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>12436546</uid>
+    <first_name>Надежда</first_name>
+    <last_name>Дромарецкая</last_name>
+    <sex>1</sex>
+    <bdate>11.8.1988</bdate>
+    <followers_count>33</followers_count>
+  </user>
+</response>

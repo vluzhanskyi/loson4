@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>162908159</uid>
+    <first_name>Инна</first_name>
+    <last_name>Туровец</last_name>
+    <sex>1</sex>
+    <bdate>4.4.1990</bdate>
+    <followers_count>90</followers_count>
+  </user>
+</response>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>20098245</uid>
+    <first_name>Наталия</first_name>
+    <last_name>Орлюк</last_name>
+    <sex>1</sex>
+    <bdate>8.11.1990</bdate>
+    <followers_count>337</followers_count>
+    <hidden>1</hidden>
+  </user>
+</response>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>75030949</uid>
+    <first_name>Оксана</first_name>
+    <last_name>Ковальчук</last_name>
+    <sex>1</sex>
+    <bdate>6.12.1989</bdate>
+    <followers_count>38</followers_count>
+  </user>
+</response>

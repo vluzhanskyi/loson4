@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response list="true">
+  <user>
+    <uid>92422881</uid>
+    <first_name>Даша</first_name>
+    <last_name>Билецкая</last_name>
+    <sex>1</sex>
+    <bdate>31.7.1996</bdate>
+    <followers_count>538</followers_count>
+  </user>
+</response>
