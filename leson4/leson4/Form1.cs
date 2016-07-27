@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
+using leson4.Properties;
 
 namespace leson4
 {
@@ -35,10 +29,10 @@ namespace leson4
         private void LoginButton_Click(object sender, EventArgs e)
         {
             GetDataButton.IsAccessible = false;
-            VKLogic l = new VKLogic();
+            VkLogic l = new VkLogic();
             l.CollectLoginData(Token, UserId);
             l.SaveData();
-            MessageBox.Show("DataBase created!");
+            MessageBox.Show(Resources.Form1_LoginButton_Click_DataBase_created_);
             GetDataButton.IsAccessible = true;
         }
 

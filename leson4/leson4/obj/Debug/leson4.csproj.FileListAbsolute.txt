@@ -7,3 +7,12 @@ E:\GitFolder\leson4VK\leson4\leson4\obj\Debug\leson4.Properties.Resources.resour
 E:\GitFolder\leson4VK\leson4\leson4\obj\Debug\leson4.csproj.GenerateResource.Cache
 E:\GitFolder\leson4VK\leson4\leson4\obj\Debug\leson4.exe
 E:\GitFolder\leson4VK\leson4\leson4\obj\Debug\leson4.pdb
+D:\GitFolder\NewRepo\leson4\leson4\leson4\bin\Debug\leson4.exe.config
+D:\GitFolder\NewRepo\leson4\leson4\leson4\bin\Debug\leson4.exe
+D:\GitFolder\NewRepo\leson4\leson4\leson4\bin\Debug\leson4.pdb
+D:\GitFolder\NewRepo\leson4\leson4\leson4\bin\Debug\VkAPI.dll
+D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.Form1.resources
+D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.Properties.Resources.resources
+D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.csproj.GenerateResource.Cache
+D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.exe
+D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.pdb

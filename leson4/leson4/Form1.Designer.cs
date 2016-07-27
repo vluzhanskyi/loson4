@@ -36,16 +36,16 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(13, 357);
+            this.listBox1.Location = new System.Drawing.Point(12, 442);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(260, 56);
+            this.listBox1.Size = new System.Drawing.Size(386, 56);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
             // GetDataButton
             // 
-            this.GetDataButton.Location = new System.Drawing.Point(678, 390);
+            this.GetDataButton.Location = new System.Drawing.Point(404, 442);
             this.GetDataButton.Name = "GetDataButton";
             this.GetDataButton.Size = new System.Drawing.Size(75, 23);
             this.GetDataButton.TabIndex = 5;
@@ -58,7 +58,7 @@
             this.webBrowser1.Location = new System.Drawing.Point(13, 13);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(740, 338);
+            this.webBrowser1.Size = new System.Drawing.Size(482, 423);
             this.webBrowser1.TabIndex = 6;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted_1);
             // 
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 425);
+            this.ClientSize = new System.Drawing.Size(507, 510);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.GetDataButton);
             this.Controls.Add(this.listBox1);
