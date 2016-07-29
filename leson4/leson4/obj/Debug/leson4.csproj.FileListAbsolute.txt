@@ -17,3 +17,4 @@ D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.csproj.GenerateResour
 D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.exe
 D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.pdb
 D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.csprojResolveAssemblyReference.cache
+E:\GitFolder\leson4VK\leson4\leson4\obj\Debug\leson4.csprojResolveAssemblyReference.cache

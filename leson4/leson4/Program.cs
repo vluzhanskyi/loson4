@@ -37,11 +37,10 @@ namespace leson4
             UserId = userId;
         }
 
-        public void SaveData()
+        public void CollectData(string dbFileName)
         {
             var users = new List<User>();
-            string response = String.Empty;
-
+            
             XDocument doc = XDocument.Load("http://api.vk.com/method/friends.get.xml?user_id=" + UserId);
             if (doc.Root != null)
             {
@@ -49,7 +48,6 @@ namespace leson4
 
                 foreach (var friend in result)
                 {                  
-                   // XmlTextReader friendXml = new XmlTextReader("http://api.vk.com/method/users.get.xml?user_ids=" + friend + "&fields=first_name,last_name,bdate,followers_count,sex");
                     XDocument f = XDocument.Load("http://api.vk.com/method/users.get.xml?user_ids=" + friend + "&fields=first_name,last_name,bdate,followers_count,sex");
                      var user = new User();
 
@@ -58,8 +56,8 @@ namespace leson4
                         int sex = 0;
                         int followersCount = 0;
                         int uid = 0;
-                        long bdate = 0;
-
+                        DateTime bDate = DateTime.MinValue;
+                        
                         var o3 = f.Root.Element("user");
                         if (o3 != null)
                         {
@@ -67,8 +65,7 @@ namespace leson4
                             if (element3 != null) 
                                 int.TryParse(element3.Value, out uid);
                         }
-                        user.Uid = uid;
-                        
+                        user.Uid = uid;                        
                         var o2 = f.Root.Element("user");
                         if (o2 != null)
                         {
@@ -86,7 +83,11 @@ namespace leson4
                         if (o != null)
                         {
                             var xElement1 = o.Element("bdate");
-                            if (xElement1 != null) long.TryParse(xElement1.Value, out bdate);
+                            
+                            if (xElement1 != null)
+                                DateTime.TryParse(xElement.Value, out bDate);
+                            if (bDate.Year < 1900)
+                                bDate = new DateTime(1990, 6, 1, 7, 47, 0);
                         }
                         var element1 = f.Root.Element("user");
                         if (element1 != null)
@@ -102,44 +103,85 @@ namespace leson4
                             if (element2 != null)
                                 user.LastName = element2.Value;
                         }
+                        user.Birthday = bDate;
                         user.Sex = sex;
                         user.FollowersCount = followersCount;
-                        user.Birthday = bdate;
+                        
 
                         XDocument music = XDocument.Load("https://api.vk.com/method/audio.get.xml?need_user=0&access_token=" + Token + "&owner_id=" + friend);
                         foreach (var sound in music.Root.Elements("audio"))
                         {
-                            var title = sound.Element("title");
-                            var artist = sound.Element("artist");
+                           var title = sound.Element("title");
+                           var artist = sound.Element("artist");
                            if (title != null && artist != null)
                             {
-                                user.AudioList.Add(new User.Song(title.Value, artist.Value));
+                                var track = new User.Song();
+                                track.Artist = artist.Value;
+                                track.Title = title.Value;
+                                user.AudioList.Add(track);
                             }
                         }
-                    }
-                   
+                    }                   
                     users.Add(user);                
                 }
-            }
-            XmlSerializer writer = new XmlSerializer(typeof(User));
+                Serialize(users, dbFileName);
+            }           
+        }
+        private void Serialize(List<User> users, string dbFileName)
+        {
+            XmlSerializer ser = new XmlSerializer(typeof(List<User>));
             XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
-            
+
             namespaces.Add(string.Empty, string.Empty);
             
-            using (FileStream fs = new FileStream("Persons.xml", FileMode.OpenOrCreate))
-            {               
-                foreach (var user in users)
-                    writer.Serialize(fs, user, namespaces);
+            using (FileStream fs = new FileStream(dbFileName, FileMode.OpenOrCreate))
+            {
+                
+                    ser.Serialize(fs, users, namespaces);
             }
-           
         }
-     
+        public Dictionary<string, string> CalculateStatistic(List<User> friends)
+        {
+            var Result = new Dictionary<string, string>();
+
+            double? averageAge =
+    (from friend in friends select friend.Birthday.Year).Average();
+            var res = DateTime.Now.Year - averageAge.Value;
+            int res0 = 0;
+            int.TryParse(res.ToString(), out res0);
+            Result.Add("AvarageAge: ", Math.Ceiling(DateTime.Now.Year - averageAge.Value).ToString());
+
+            double? averageFollowersCount =
+    (from friend in friends select friend.FollowersCount).Average();
+            Result.Add("AvarageFollowersCount: ", Math.Ceiling(averageFollowersCount.Value).ToString());
+
+            double? averageSex =
+   (from friend in friends select friend.Sex).Average();
+            Result.Add("AvarageSex: ", Math.Ceiling(averageSex.Value).ToString());
+
+            return Result;
+        }
+
+        public List<User> Deserialize(string dbfilename)
+        {
+            
+            List<User> users = new List<User>();
+
+            XmlSerializer serializer = new XmlSerializer(typeof(List<User>));
+            FileStream fs = new FileStream(dbfilename, FileMode.Open);
+            XmlReader reader = XmlReader.Create(fs);
+            users = (List<User>)serializer.Deserialize(reader);
+            
+            fs.Close();
+
+            return users;
+        }
         public class User
         {
             public int Uid { set; get; }
             public int Sex { set; get; }
             public int FollowersCount { set; get; }
-            public long Birthday { set; get; }
+            public DateTime Birthday { set; get; }
             public string FirstName { set; get; }
             public string LastName { set; get; }
             public List<Song> AudioList = new List<Song>();
@@ -147,12 +189,7 @@ namespace leson4
 
             public class Song
             {
-                public Song(string tittle, string artist)
-                {
-                    Title = tittle;
-                    Artist = artist;
-                }
-
+                
                 public string Title { set; get; }
                 public string Artist { set; get; }
             }
