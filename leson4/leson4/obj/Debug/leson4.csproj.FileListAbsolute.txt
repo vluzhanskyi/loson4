@@ -16,3 +16,4 @@ D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.Properties.Resources.
 D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.csproj.GenerateResource.Cache
 D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.exe
 D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.pdb
+D:\GitFolder\NewRepo\leson4\leson4\leson4\obj\Debug\leson4.csprojResolveAssemblyReference.cache

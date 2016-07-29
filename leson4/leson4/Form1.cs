@@ -39,7 +39,7 @@ namespace leson4
         public void Auth()
         {
             string appId = "5563664";
-            string Scope = "2";
+            string Scope = "friends,audio,pages,wall,stats";
             string url = "https://oauth.vk.com/authorize?client_id=" + appId + "&display=popup&redirect_uri=http://api.vkontakte.ru/blank.html&scope=" + Scope + "&response_type=token&v=5.53&state=123456";
             webBrowser1.Navigate(url);
         }
