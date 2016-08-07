@@ -35,7 +35,7 @@
             // 
             // GetDataButton
             // 
-            this.GetDataButton.Location = new System.Drawing.Point(404, 442);
+            this.GetDataButton.Location = new System.Drawing.Point(12, 475);
             this.GetDataButton.Name = "GetDataButton";
             this.GetDataButton.Size = new System.Drawing.Size(75, 23);
             this.GetDataButton.TabIndex = 5;
@@ -48,13 +48,13 @@
             this.webBrowser1.Location = new System.Drawing.Point(13, 12);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(482, 423);
+            this.webBrowser1.Size = new System.Drawing.Size(612, 457);
             this.webBrowser1.TabIndex = 6;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted_1);
             // 
             // CalculateButton
             // 
-            this.CalculateButton.Location = new System.Drawing.Point(404, 473);
+            this.CalculateButton.Location = new System.Drawing.Point(550, 475);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(75, 23);
             this.CalculateButton.TabIndex = 7;
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 510);
+            this.ClientSize = new System.Drawing.Size(637, 510);
             this.Controls.Add(this.CalculateButton);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.GetDataButton);

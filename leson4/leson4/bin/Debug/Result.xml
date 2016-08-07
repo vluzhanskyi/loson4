@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ArrayOfResultedData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ResultedData>
+    <Key>AvarageAge: </Key>
+    <Value>26</Value>
+  </ResultedData>
+  <ResultedData>
+    <Key>AvarageFollowersCount: </Key>
+    <Value>230</Value>
+  </ResultedData>
+  <ResultedData>
+    <Key>AvarageSex: </Key>
+    <Value>Womans</Value>
+  </ResultedData>
+  <ResultedData>
+    <Key>Popular Artist: </Key>
+    <Value>Детские песни</Value>
+  </ResultedData>
+</ArrayOfResultedData>

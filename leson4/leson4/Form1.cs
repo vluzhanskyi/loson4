@@ -3,6 +3,9 @@
 using System.Windows.Forms;
 using leson4.Properties;
 using System.Collections.Generic;
+using System.Text;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace leson4
 {
@@ -12,8 +15,7 @@ namespace leson4
         private string UserId { get; set; }
         public Form1()
         {
-            InitializeComponent();
-            
+            InitializeComponent();          
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,20 +36,20 @@ namespace leson4
         private void CalculateButton_Click(object sender, EventArgs e)
         {
             VkLogic l = new VkLogic();
-            Dictionary<string, string> stat = l.CalculateStatistic(l.Deserialize("Persons.xml"));
-            int i = 0;
+            List<Types.ResultedData> stat = l.CalculateStatistic(l.Deserialize("Persons.xml"));
             
-            foreach (var item in stat)
-            {
-                //richTextBox1.Text.Insert(i, );
-
-                MessageBox.Show(item.Key + item.Value);
-                i++;
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Types.ResultedData>));
+            using (FileStream fs = new FileStream("Result.xml", FileMode.OpenOrCreate))
+            {              
+                    serializer.Serialize(fs, stat);                                
             }
+            string curDir = Directory.GetCurrentDirectory().Replace("\\", "/");
+            webBrowser1.Url = new Uri(String.Format("file:///{0}/Result.xml", curDir));
+            
         }
         public void Auth()
         {
-            string appId = "5563664";
+            string appId = "5578372";
             string Scope = "friends,audio,pages,wall,stats";
             string url = "https://oauth.vk.com/authorize?client_id=" + appId + "&display=popup&redirect_uri=http://api.vkontakte.ru/blank.html&scope=" + Scope + "&response_type=token&v=5.53&state=123456";
             webBrowser1.Navigate(url);
@@ -58,11 +60,8 @@ namespace leson4
             string uri = webBrowser1.Url.ToString();
             Token = uri.Split('=')[1].Split('&')[0];
             UserId = uri.Split('=')[3].Split('&')[0];
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        }              
+      
     }
+
 }
