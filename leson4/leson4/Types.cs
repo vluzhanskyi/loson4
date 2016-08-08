@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace leson4
 {
@@ -14,13 +11,15 @@ namespace leson4
             {
 
             }
-            public ResultedData(string key, string value)
+            public ResultedData(string key, string value, List<string> artistList )
             {
                 Key = key;
                 Value = value;
+                ArtistsList = artistList;
             }
             public string Key { set; get; }
             public string Value { set; get; }
+            public List<string> ArtistsList { set; get; }
         }
 
         public class User

@@ -6,14 +6,20 @@
   </ResultedData>
   <ResultedData>
     <Key>AvarageFollowersCount: </Key>
-    <Value>230</Value>
+    <Value>166</Value>
   </ResultedData>
   <ResultedData>
     <Key>AvarageSex: </Key>
     <Value>Womans</Value>
   </ResultedData>
   <ResultedData>
-    <Key>Popular Artist: </Key>
-    <Value>Детские песни</Value>
+    <Key>Top 5 Artists: </Key>
+    <ArtistsList>
+      <string>Океан Ельзи</string>
+      <string>Бумбокс</string>
+      <string>Сплин</string>
+      <string>ДДТ</string>
+      <string>Spiritual Seasons</string>
+    </ArtistsList>
   </ResultedData>
 </ArrayOfResultedData>
