@@ -11,6 +11,8 @@ namespace leson4
     {
         private string Token { get; set; }
         private string UserId { get; set; }
+        public static int FriendCount { get; set; }
+
         public Form1()
         {
             InitializeComponent();          
@@ -26,14 +28,18 @@ namespace leson4
             GetDataButton.IsAccessible = false;
             var l = new VkLogic();
             l.CollectLoginData(Token, UserId);
+            progressBar1.Maximum = FriendCount;
+            progressBar1.Step = FriendCount / 2;
             l.CollectData("Persons.xml");
-
             MessageBox.Show(Resources.Form1_LoginButton_Click_DataBase_created_);
             GetDataButton.IsAccessible = true;
         }
+
         private void CalculateButton_Click(object sender, EventArgs e)
         {
             var l = new VkLogic();
+            progressBar1.Maximum = FriendCount;
+            progressBar1.Step = FriendCount / 2;
             var stat = l.CalculateStatistic(l.Deserialize("Persons.xml"));
             
             var serializer = new XmlSerializer(typeof(List<Types.ResultedData>));
@@ -43,8 +49,10 @@ namespace leson4
             }
             var curDir = Directory.GetCurrentDirectory().Replace("\\", "/");
             webBrowser1.Url = new Uri(string.Format("file:///{0}/Result.xml", curDir));
+            progressBar1.Value = progressBar1.Maximum;
             
         }
+
         public void Auth()
         {
             const string appId = "5578372";
@@ -53,7 +61,7 @@ namespace leson4
             webBrowser1.Navigate(url);
         }
 
-        private void webBrowser1_DocumentCompleted_1(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private void webBrowser1_DocumentCompleted_1(object sender, EventArgs e)
         {
             var uri = webBrowser1.Url.ToString();
 
@@ -61,6 +69,17 @@ namespace leson4
                 return;
             Token = uri.Split('=')[1].Split('&')[0];
             UserId = uri.Split('=')[3].Split('&')[0];
+        }
+
+        public static void IncreaseProgressValue()
+        {
+            if (progressBar1.Value != progressBar1.Maximum)
+                progressBar1.Value += 1;
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+            
         }              
       
     }

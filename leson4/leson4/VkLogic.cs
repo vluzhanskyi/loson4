@@ -14,22 +14,30 @@ namespace leson4
     {
         private string Token { set; get; }
         private string UserId { set; get; }
+        private IEnumerable<string> Friends { set; get; }
 
         public void CollectLoginData(string token, string userId)
         {
             Token = token;
             UserId = userId;
+            Friends = GetFriends();
+        }
+
+        private IEnumerable<string> GetFriends()
+        {
+            var doc = XDocument.Load("http://api.vk.com/method/friends.get.xml?user_id=" + UserId);
+            if (doc.Root == null) return null;
+            var result = doc.Root.Elements("uid").Select(e => e.Value).ToArray();
+            Form1.FriendCount = result.Length;
+            
+            return result;
         }
 
         public void CollectData(string dbFileName)
         {
             var users = new List<Types.User>();
 
-            var doc = XDocument.Load("http://api.vk.com/method/friends.get.xml?user_id=" + UserId);
-            if (doc.Root == null) return;
-            var result = doc.Root.Elements("uid").Select(e => e.Value).ToArray();
-
-            foreach (var friend in result)
+            foreach (var friend in Friends)
             {
                 var f = XDocument.Load("http://api.vk.com/method/users.get.xml?user_ids=" + friend + "&fields=first_name,last_name,bdate,followers_count,sex");
                 var user = new Types.User();
@@ -90,7 +98,6 @@ namespace leson4
                     user.Sex = sex;
                     user.FollowersCount = followersCount;
 
-
                     var music = XDocument.Load("https://api.vk.com/method/audio.get.xml?need_user=0&access_token=" + Token + "&owner_id=" + friend);
                     foreach (var sound in music.Root.Elements("audio"))
                     {
@@ -106,6 +113,7 @@ namespace leson4
                     }
                 }
                 users.Add(user);
+                Form1.IncreaseProgressValue();
             }
             Serialize(users, dbFileName);
         }

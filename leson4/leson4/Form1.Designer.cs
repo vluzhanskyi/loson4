@@ -31,6 +31,7 @@
             this.GetDataButton = new System.Windows.Forms.Button();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.CalculateButton = new System.Windows.Forms.Button();
+            Form1.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // GetDataButton
@@ -62,11 +63,20 @@
             this.CalculateButton.UseVisualStyleBackColor = true;
             this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
+            // progressBar1
+            // 
+            Form1.progressBar1.Location = new System.Drawing.Point(94, 475);
+            Form1.progressBar1.Name = "progressBar1";
+            Form1.progressBar1.Size = new System.Drawing.Size(450, 23);
+            Form1.progressBar1.TabIndex = 8;
+            Form1.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 510);
+            this.Controls.Add(Form1.progressBar1);
             this.Controls.Add(this.CalculateButton);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.GetDataButton);
@@ -81,6 +91,7 @@
         private System.Windows.Forms.Button GetDataButton;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Button CalculateButton;
+        private static System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
