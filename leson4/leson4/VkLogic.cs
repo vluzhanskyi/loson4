@@ -176,11 +176,11 @@ namespace leson4
         private static List<string> GetTopFiveSongs(IEnumerable<Types.User> friends)
         {
             var songs = friends.SelectMany(friend => friend.AudioList).ToList();
+           // var artists = songs.Select(e => e.Artist).ToList();
 
-            var topFiveSongs = songs.GroupBy(q => q.Artist)
-                                             .OrderByDescending(gp => gp.Count())
-                                             .Take(5)
-                                             .Select(g => g.Key).ToList();
+            var topFiveSongs = songs.GroupBy(i => i.Artist).OrderByDescending(grp => grp.Count())
+                                                           .Select(grp => grp.Key)
+                                                           .Take(5).ToList();
 
             return topFiveSongs;
         }
